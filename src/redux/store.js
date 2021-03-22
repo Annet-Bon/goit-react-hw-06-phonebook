@@ -33,7 +33,7 @@ export const store = configureStore({
         contacts: persistReducer(phonebookPersistConfig, phonebookReducer),
     },
         middleware,
-    // devTools: process.env.NODE_ENV === 'development',
+    	devTools: true,
 });
 
 export const persistor = persistStore(store);
