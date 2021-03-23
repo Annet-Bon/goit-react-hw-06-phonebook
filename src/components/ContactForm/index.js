@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import * as actions from '../redux/phonebook-actions';
+import * as actions from '../../redux/phonebook-actions';
 
 import Alert from '../Alert/index';
 

@@ -1,14 +1,14 @@
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 // js
-import ContactForm from './ContactForm/index';
-import Filter from './Filter/index';
-import ContactList from './ContactList/index';
+import ContactForm from './components/ContactForm/index';
+import Filter from './components/Filter/index';
+import ContactList from './components/ContactList/index';
 
 // css
 import styles from './app.module.css';
 
-import filterStyles from './Filter/fadeFilter.module.css';
+import filterStyles from './components/Filter/fadeFilter.module.css';
 
 const App = ({ contacts, clearFilter }) => {
 	return (
@@ -43,7 +43,7 @@ const App = ({ contacts, clearFilter }) => {
 				)}
 		</div>
 	);
-}
+};
 
 const mapStateToProps = state => ({
 	contacts: state.contacts.items,

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as actions from '../redux/phonebook-actions';
+import * as actions from '../../redux/phonebook-actions';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import ContactListItem from '../ContactListItem';
