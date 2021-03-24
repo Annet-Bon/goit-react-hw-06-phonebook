@@ -41,6 +41,7 @@ class ContactForm extends Component {
 
         if (contacts.some(contact => contact.name === name)) {
             this.addAlertMessage(`${name} is already in contacts`);
+            this.reset();
             return;
         }
 
@@ -76,7 +77,7 @@ class ContactForm extends Component {
 					timeout={250}
 					unmountOnExit
 				>
-          			<Alert text={alert}/>
+          			<Alert message={alert}/>
         		</CSSTransition>
             <form onSubmit={this.onSubmit} className={styles.form}>
                 <label className={styles.label}>
@@ -85,8 +86,10 @@ class ContactForm extends Component {
                         className={styles.input}
                         type="text"
                         name="name"
+                        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                         value={name}
                         onChange={this.onChange}
+                        required
                     />
                 </label>
 
@@ -94,10 +97,12 @@ class ContactForm extends Component {
                     <span className={styles.title}>Number</span>
                     <input
                         className={styles.input}
-                        type="text"
+                        type="tel"
                         name="number"
+                        pattern="(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){7,14}(\s*)?"
                         value={number}
                         onChange={this.onChange}
+                        required
                     />
                 </label>
 
